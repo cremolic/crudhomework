@@ -1,0 +1,8 @@
+<h1>글을 씁시다</h1>
+
+<%=form_tag({controller: :home, action: :create}) do %>
+ 제목: <%=text_field_tag :post_title%><br><br>
+ 내용: <%=text_area_tag :post_content%><br><br>
+ <%=submit_tag '작성' %>
+ <%end%>
+

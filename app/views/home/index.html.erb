@@ -1,0 +1,16 @@
+<center>
+<h1>금이의 게시판</h1>
+<%=image_tag("http://imgur.com/qMaSIPq.jpg", width:'250', height:'300', alt:"금이")%><br><br>
+
+<%=link_to '새글을 써봐멍', '/new' %><br><br>
+<%@posts.each do |post|%>
+<%@current=Time.now%>
+<%=@current.strftime('%Y년 %m월 %d일 %H시 %M분 %S초') %><br><br>
+
+ 제목:<%=post.title%><br>
+ 내용:<%=post.content%><br>
+ <%=link_to '[삭제]', '/destroy' %>
+ <a href="/edit/<%=post.id%>">[수정]</a><br>
+ ----------------------------------<br> 
+<%end%>
+</center>
